@@ -1,11 +1,16 @@
 name: Build
 on: [push, pull_request]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: kivy/buildozer-action@master
-        with:
 
+      - name: Build with Buildozer
+        uses: kivy/buildozer-action@master
+        with:
           buildozer_version: stable
+
+
+
